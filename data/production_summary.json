@@ -1,0 +1,44 @@
+{
+  "n_interactions": 265,
+  "by_question_type": {
+    "infracciones": 127,
+    "articulos": 121,
+    "definiciones": 17
+  },
+  "by_regulation": {
+    "orden_justicia": 115,
+    "transito": 121,
+    "ambos": 29
+  },
+  "feedback": {
+    "none": 221,
+    "like": 43,
+    "dislike": 1
+  },
+  "feedback_categories_among_responders": {
+    "NULL": 12,
+    "Me resolviste mi duda": 19,
+    "Buscaré un abogado": 4,
+    "Voy a hablar con una autoridad": 6,
+    "Compartiré la información": 3
+  },
+  "latency_seconds": {
+    "median": 11.5,
+    "mean": 12.2,
+    "p95": 22.3,
+    "max": 31.7
+  },
+  "tokens": {
+    "mean_input": 5100,
+    "mean_output": 198
+  },
+  "retrieved_chunks": {
+    "mean": 7.9,
+    "median": 8,
+    "zero_chunk_rows": 5
+  },
+  "date_range": [
+    "2026-03-06",
+    "2026-06-10"
+  ]
+}

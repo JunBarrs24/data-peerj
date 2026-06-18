@@ -1,0 +1,12 @@
+{
+  "min_avg_overall": 7.5,
+  "min_case_overall": 6.5,
+  "max_worse_cases": 0,
+  "max_contradiction_risk": 4.0,
+  "max_hallucination_risk": 4.0,
+  "max_by_judge_stddev": 2.5,
+  "critical_case_ids": [],
+  "max_critical_failures": 0,
+  "max_score_drop_per_case": 1.0,
+  "max_avg_drop_from_baseline": 0.3
+}

@@ -1,0 +1,895 @@
+{
+  "summary": {
+    "retrieval": {
+      "metric_label": "retrieval recall against judge-cited articles (proxy, llama3-free)",
+      "k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "n_cases_total": 35,
+      "n_cases_with_gold": 33,
+      "n_cases_excluded_no_parseable_gold": 2,
+      "excluded_case_ids": [
+        "case_0020",
+        "case_0021"
+      ],
+      "gold_parse_coverage": 0.9429,
+      "n_included_with_zero_article_retrieval": 2,
+      "zero_article_retrieval_case_ids": [
+        "case_0016",
+        "case_0023"
+      ],
+      "unknown_group_gold_pairs": 0,
+      "recall_at_k": {
+        "1": 0.2348,
+        "3": 0.5909,
+        "5": 0.7677,
+        "10": 0.8283
+      },
+      "precision_at_k": {
+        "1": 0.303,
+        "3": 0.2424,
+        "5": 0.1879,
+        "10": 0.1
+      },
+      "mrr": 0.4978,
+      "caveats": [
+        "Gold = judge-cited articles parsed from referencias_<judge> (proxy for relevance, not a curated IR benchmark).",
+        "Scope is articulos/infracciones cases; cases with no parseable article gold (incl. definiciones and page-only citations) are excluded and counted.",
+        "Normalization is on (group_id, clave); reform and base transit share a group_id.",
+        "Referencias are ranked by service score (descending) because the API reorders them by answer appearance.",
+        "Unknown-group gold pairs (article cited without a named regulation) are matched as a wildcard against any group with the same clave.",
+        "precision@k uses k as denominator including non-article retrieved slots, so it under-counts for infraction questions that also retrieve infraction-row units."
+      ]
+    }
+  },
+  "per_case": [
+    {
+      "case_id": "case_0001",
+      "question": "ARTICULO DE NO USAR CASCO EN MOTOCICLETA",
+      "gold_claves": [
+        "Artículo 158.",
+        "Artículo 20."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 158.",
+        "transito-morelia|Artículo 20."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 0.5,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 1.0,
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.2
+      },
+      "reciprocal_rank": 1.0
+    },
+    {
+      "case_id": "case_0002",
+      "question": "ARTICULO DONDE DICE QUE ES INFRACCION ESTACIONARSE AFUERA DE UNA COCHERA",
+      "gold_claves": [
+        "Artículo 87."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 87."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 6,
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 1.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 1.0
+    },
+    {
+      "case_id": "case_0003",
+      "question": "ARTICULO QUE DICE QUE NO PUEDES MANEJAR EN ESTADO DE EBRIEDAD",
+      "gold_claves": [
+        "Artículo 130.",
+        "Artículo 18.",
+        "Artículo 19.",
+        "Artículo 5."
+      ],
+      "gold_pairs": [
+        "orden-justicia-civica-morelia|Artículo 5.",
+        "transito-morelia|Artículo 130.",
+        "transito-morelia|Artículo 18.",
+        "transito-morelia|Artículo 19."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 0.25,
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "precision_at_k": {
+        "1": 1.0,
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.2
+      },
+      "reciprocal_rank": 1.0
+    },
+    {
+      "case_id": "case_0004",
+      "question": "ARTICULO QUE ESPECIFICA ALTERAR EL ORDEN",
+      "gold_claves": [
+        "Artículo 10.",
+        "Artículo 5."
+      ],
+      "gold_pairs": [
+        "orden-justicia-civica-morelia|Artículo 10.",
+        "orden-justicia-civica-morelia|Artículo 5."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 0.5,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 1.0,
+        "3": 0.6666666666666666,
+        "5": 0.4,
+        "10": 0.2
+      },
+      "reciprocal_rank": 1.0
+    },
+    {
+      "case_id": "case_0005",
+      "question": "ARTICULO QUE ESPECIFICA CONDUCIR SIN LICENCIA",
+      "gold_claves": [
+        "Artículo 52."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 52."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 1.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 1.0
+    },
+    {
+      "case_id": "case_0006",
+      "question": "CUAL ES LA SANCION POR TIRAR BASURA EN LA CALLE",
+      "gold_claves": [
+        "Artículo 9."
+      ],
+      "gold_pairs": [
+        "orden-justicia-civica-morelia|Artículo 9."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 1.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 1.0
+    },
+    {
+      "case_id": "case_0007",
+      "question": "En qué artículo prohíbe estacionarse enfrente de una cochera?",
+      "gold_claves": [
+        "Artículo 87."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 87."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.5
+    },
+    {
+      "case_id": "case_0008",
+      "question": "Estacionarme en doble fila",
+      "gold_claves": [
+        "Artículo 83."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 83."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 5,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "reciprocal_rank": 0.0
+    },
+    {
+      "case_id": "case_0009",
+      "question": "Está prohibido estacionarse enfrente de una cochera?",
+      "gold_claves": [
+        "Artículo 87."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 87."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 7,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.25
+    },
+    {
+      "case_id": "case_0010",
+      "question": "Pasarme un semaforo",
+      "gold_claves": [
+        "Artículo 106."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 106."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 5,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.5
+    },
+    {
+      "case_id": "case_0011",
+      "question": "Puedo pasarme un semáforo en rojo por alguna emergencia",
+      "gold_claves": [
+        "Artículo 106."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 106."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.3333333333333333
+    },
+    {
+      "case_id": "case_0012",
+      "question": "QUE PASA SI ME PASO UN SEMAFORO EN ROJO",
+      "gold_claves": [
+        "Artículo 106."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 106."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 5,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.14285714285714285
+    },
+    {
+      "case_id": "case_0013",
+      "question": "artículo donde se establece que es infracción estacionarse en la vía pública",
+      "gold_claves": [
+        "Artículo 87."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 87."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.5
+    },
+    {
+      "case_id": "case_0014",
+      "question": "de cuanto es la multa por no traer casco",
+      "gold_claves": [
+        "Artículo 158.",
+        "Artículo 20."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 158.",
+        "transito-morelia|Artículo 20."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 5,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.5,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.4,
+        "10": 0.2
+      },
+      "reciprocal_rank": 0.5
+    },
+    {
+      "case_id": "case_0015",
+      "question": "dejar basura en la calle en delito?",
+      "gold_claves": [
+        "Artículo 9."
+      ],
+      "gold_pairs": [
+        "orden-justicia-civica-morelia|Artículo 9."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.25
+    },
+    {
+      "case_id": "case_0016",
+      "question": "ejemplos de una infraccion",
+      "gold_claves": [
+        "Artículo 5."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 5."
+      ],
+      "n_retrieved": 0,
+      "n_article_retrieved": 0,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "reciprocal_rank": 0.0
+    },
+    {
+      "case_id": "case_0017",
+      "question": "es falta no traer tarjeta de circulacion?",
+      "gold_claves": [
+        "Artículo 56."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 56."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 6,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "reciprocal_rank": 0.0
+    },
+    {
+      "case_id": "case_0018",
+      "question": "estacionarme en linea amarilla",
+      "gold_claves": [
+        "Artículo 96."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 96."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 7,
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 1.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 1.0
+    },
+    {
+      "case_id": "case_0019",
+      "question": "ingerir bebidas alcoholicas en la via publica",
+      "gold_claves": [
+        "Artículo 5."
+      ],
+      "gold_pairs": [
+        "orden-justicia-civica-morelia|Artículo 5."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 1.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 1.0
+    },
+    {
+      "case_id": "case_0022",
+      "question": "que articulo dice los lugares prohibidos para estacionarme",
+      "gold_claves": [
+        "Artículo 87."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 87."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.5
+    },
+    {
+      "case_id": "case_0023",
+      "question": "que es una infraccion",
+      "gold_claves": [
+        "Artículo 2.",
+        "Artículo 3."
+      ],
+      "gold_pairs": [
+        "orden-justicia-civica-morelia|Artículo 2.",
+        "transito-morelia|Artículo 3."
+      ],
+      "n_retrieved": 0,
+      "n_article_retrieved": 0,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.0
+      },
+      "reciprocal_rank": 0.0
+    },
+    {
+      "case_id": "case_0024",
+      "question": "que pASA si tengo escombro afuera de mi casa?",
+      "gold_claves": [
+        "Artículo 235.",
+        "Artículo 5.",
+        "Artículo 81."
+      ],
+      "gold_pairs": [
+        "orden-justicia-civica-morelia|Artículo 235.",
+        "orden-justicia-civica-morelia|Artículo 5.",
+        "transito-morelia|Artículo 81."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.3333333333333333,
+        "10": 0.3333333333333333
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.25
+    },
+    {
+      "case_id": "case_0025",
+      "question": "que pasa si manejo en estado de ebriedad",
+      "gold_claves": [
+        "Artículo 130.",
+        "Artículo 5."
+      ],
+      "gold_pairs": [
+        "orden-justicia-civica-morelia|Artículo 5.",
+        "transito-morelia|Artículo 130."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 5,
+      "recall_at_k": {
+        "1": 0.5,
+        "3": 0.5,
+        "5": 0.5,
+        "10": 0.5
+      },
+      "precision_at_k": {
+        "1": 1.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 1.0
+    },
+    {
+      "case_id": "case_0026",
+      "question": "que pasa si me paso un semaforo en rojo a las 12 am?",
+      "gold_claves": [
+        "Artículo 106."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 106."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 6,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.2
+    },
+    {
+      "case_id": "case_0027",
+      "question": "que pasa si mi vecino quema basura en la calle",
+      "gold_claves": [
+        "Artículo 6."
+      ],
+      "gold_pairs": [
+        "orden-justicia-civica-morelia|Artículo 6."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.3333333333333333
+    },
+    {
+      "case_id": "case_0028",
+      "question": "que pasa si quemo basura en la calle",
+      "gold_claves": [
+        "Artículo 6."
+      ],
+      "gold_pairs": [
+        "orden-justicia-civica-morelia|Artículo 6."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.25
+    },
+    {
+      "case_id": "case_0029",
+      "question": "se puede tomar bebidas alcoholicas en la via publica?",
+      "gold_claves": [
+        "Artículo 5."
+      ],
+      "gold_pairs": [
+        "orden-justicia-civica-morelia|Artículo 5."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 1.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 1.0
+    },
+    {
+      "case_id": "case_0030",
+      "question": "si manejo pero no tengo licencia que pasa?",
+      "gold_claves": [
+        "Artículo 52."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 52."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 6,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.25
+    },
+    {
+      "case_id": "case_0031",
+      "question": "si manejo pero sin cinturon de seguridad?",
+      "gold_claves": [
+        "Artículo 18."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 18."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 4,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.16666666666666666
+    },
+    {
+      "case_id": "case_0032",
+      "question": "si manejo sin cinturon de seguridad que pasa?",
+      "gold_claves": [
+        "Artículo 18."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 18."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 5,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.3333333333333333
+    },
+    {
+      "case_id": "case_0033",
+      "question": "si me pase un semaforo por una emergencia pero no venia carro que pasa",
+      "gold_claves": [
+        "Artículo 106."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 106."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 7,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.3333333333333333
+    },
+    {
+      "case_id": "case_0034",
+      "question": "si me paso una luz roja del semaforo que pasa?",
+      "gold_claves": [
+        "Artículo 106."
+      ],
+      "gold_pairs": [
+        "transito-morelia|Artículo 106."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 4,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.3333333333333333
+    },
+    {
+      "case_id": "case_0035",
+      "question": "si orino en la calle por una emergencia que pasa",
+      "gold_claves": [
+        "Artículo 9."
+      ],
+      "gold_pairs": [
+        "orden-justicia-civica-morelia|Artículo 9."
+      ],
+      "n_retrieved": 8,
+      "n_article_retrieved": 8,
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 1.0,
+        "5": 1.0,
+        "10": 1.0
+      },
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.3333333333333333,
+        "5": 0.2,
+        "10": 0.1
+      },
+      "reciprocal_rank": 0.5
+    }
+  ]
+}
