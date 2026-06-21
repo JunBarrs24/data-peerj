@@ -1,44 +1,45 @@
 {
-  "n_interactions": 265,
+  "n_interactions": 664,
   "by_question_type": {
-    "infracciones": 127,
-    "articulos": 121,
-    "definiciones": 17
+    "infracciones": 345,
+    "articulos": 287,
+    "definiciones": 32
   },
   "by_regulation": {
-    "orden_justicia": 115,
-    "transito": 121,
-    "ambos": 29
+    "orden_justicia": 156,
+    "transito": 458,
+    "ambos": 44,
+    "unknown": 6
   },
   "feedback": {
-    "none": 221,
-    "like": 43,
+    "none": 614,
+    "like": 49,
     "dislike": 1
   },
   "feedback_categories_among_responders": {
-    "NULL": 12,
-    "Me resolviste mi duda": 19,
-    "Buscaré un abogado": 4,
+    "NULL": 17,
+    "Me resolviste mi duda": 20,
+    "Compartiré la información": 3,
     "Voy a hablar con una autoridad": 6,
-    "Compartiré la información": 3
+    "Buscaré un abogado": 4
   },
   "latency_seconds": {
     "median": 11.5,
-    "mean": 12.2,
-    "p95": 22.3,
-    "max": 31.7
+    "mean": 12.6,
+    "p95": 23.7,
+    "max": 37.7
   },
   "tokens": {
-    "mean_input": 5100,
-    "mean_output": 198
+    "mean_input": 6881,
+    "mean_output": 247
   },
   "retrieved_chunks": {
     "mean": 7.9,
     "median": 8,
-    "zero_chunk_rows": 5
+    "zero_chunk_rows": 11
   },
   "date_range": [
     "2026-03-06",
-    "2026-06-10"
+    "2026-06-21"
   ]
 }

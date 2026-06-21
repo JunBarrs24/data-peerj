@@ -12,8 +12,8 @@ application, secrets, and other files are deliberately excluded.
 ```
 data/
   judge_benchmark_anonymized.csv          Layer 1 expert benchmark (47 questions, 4 judges, consolidated answer + status)
-  production_interactions_deidentified.csv Layer 3/4 production interactions (derived fields only; no user text, no IDs)
-  production_summary.json                  Aggregates that reproduce Tables 4, 5, 6
+  production_interactions_deidentified.csv Layer 3/4 production interactions (664 rows; derived fields only; no user text, no IDs)
+  production_summary.json                  Aggregates (n=664) that reproduce Tables 4, 5, 6
 validator_output/
   baseline_report.json                     Layer 2 baseline run (5.46)
   report_test_2026-03-02_035001.json       Layer 2 optimized run (7.56)
@@ -35,12 +35,17 @@ code/
 | Table 3 (5.46 / 7.56 / 8.18 / 8.41, worse counts, pass=false) | `validator_output/*.json`, `code/thresholds.json` |
 | Retrieval recall@5 0.768, MRR 0.498 (and 31-case variant) | `validator_output/retrieval_metrics_2026-06-10.json`, `code/retrieval_metrics.py` |
 | Table 4 (type / regulation distribution) | `data/production_interactions_deidentified.csv`, `data/production_summary.json` |
-| Table 5 (feedback 43/1/221, categories) | same as Table 4 |
+| Table 5 (feedback 49/1/614, categories) | same as Table 4 |
 | Table 6 (latency, tokens, chunks) | same as Table 4 |
 | Figure 2 (validator bars) | `validator_output/*.json` |
 | Figure 3 (demand by type) | `data/production_summary.json` |
 
 ## Reproduce
+
+> Both `production_summary.json` and `production_interactions_deidentified.csv` were
+> regenerated to the 664-interaction cut (source `new-data-jun21.csv`, to 2026-06-21) after
+> the 2026-06-16 Reglamento de Tránsito reform drove a ×2.51 surge over the earlier 265 cut.
+> The 250/265 figures are retained only as historical baselines in the article prose.
 
 - Tables 4 to 6 and Figures 3: read `production_interactions_deidentified.csv` (one row per
   interaction, derived fields only) or `production_summary.json` (precomputed aggregates).
