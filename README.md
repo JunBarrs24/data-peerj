@@ -1,7 +1,7 @@
 # Evaluation data and code: ValladolIA municipal legal assistant
 
 Supplement for the article "From Citizen Queries to Expert Review: Evaluating a
-Retrieval-Augmented Municipal Legal Assistant" (PeerJ Computer Science).
+Retrieval-Augmented Municipal Legal Assistant"
 
 This bundle contains only the data and code needed to reproduce the evaluation reported in
 the article. It is a standalone subset of a larger private project repository; the runtime
